@@ -5,7 +5,8 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+    <h3>Thank you for your order!</h3>
+    <h4>Order confirmation and updates: <%= @order.email %></h4>
   </div>
 
   <% puts @order.inspect %>
@@ -38,9 +39,6 @@
         </tfoot>
       </table>
     </div>
-
-    <p> Order email: <%= @order.email %> </p>
-    <p> Order total (cents): <%= humanized_money_with_symbol @order.total_cents/100 %> </p>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
