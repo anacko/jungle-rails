@@ -6,7 +6,7 @@
 
   <% if enhanced_cart.size == 0 %>
     <div class="alert alert-info" role="alert">
-      Oh, no! Your cart seems empty. <a href="/" class="alert-link">Click here</a> to go to the main page and happy shopping!
+      Oh, no! Your cart seems empty. <%= link_to "Click here", root_path, class: "alert-link" %> to go to the main page and happy shopping!
     </div>
   <% else %>
     <div class="panel panel-default items">
