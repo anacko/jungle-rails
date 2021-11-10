@@ -29,4 +29,10 @@ class ApplicationController < ActionController::Base
     cookies[:cart]
   end
 
+  # def find_product_details (product_id)
+  #   details = Product.find_by(id: product_id)
+  #   { name:details[:name], description:details[:description], image:details[:image] }
+  # end
+  # helper_method :find_product_details
+
 end
