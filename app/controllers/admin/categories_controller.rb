@@ -5,6 +5,7 @@ class Admin::CategoriesController < ApplicationController
   def index
     @categories_products = pair_category_products
     @total_products = Product.count
+    @categories = Category.all
   end
 
   def create
@@ -31,10 +32,12 @@ class Admin::CategoriesController < ApplicationController
 
   def pair_category_products
     category_count = Product.group("category_id").count
-    category_info = []
-    category_count.each {|key, value| category_info << {"id": key, "name": Category.find(key).name, "number_of_products": value}}
+    categories = Category.all
+    category_info = []    
+    categories.each {|elem| category_info << {"id": elem.id, "name": elem.name, "number_of_products": category_count[elem.id] || 0}}
     category_info
   end
+
 end
 
 
