@@ -4,6 +4,8 @@ class Admin::CategoriesController < ApplicationController
   
   def index
     @categories = Category.order(id: :desc).all
+    @categories_products = pair_category_products
+    @total_products = Product.count
   end
 
   def create
@@ -26,6 +28,13 @@ class Admin::CategoriesController < ApplicationController
     params.require(:category).permit(
       :name
     )
+  end
+
+  def pair_category_products
+    category_count = Product.group("category_id").count
+    category_info = []
+    category_count.each {|key, value| category_info << {"id": key, "name": Category.find(key).name, "number_of_products": value}}
+    category_info
   end
 end
 
