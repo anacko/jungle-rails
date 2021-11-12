@@ -30,22 +30,21 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <%= puts "CURRENT USER: #{@current_user}" %>
-      <%# if @current_user %>
+      <% if session[:user_id] %>
         <li>
-          Logged in as <%#= @current_user.email %>
+          <p class="user-logged-in">Logged in as <%= current_user.email %></p>
         </li>
         <li>
           <%= link_to 'Logout', '/logout' %>
         </li>
-        <%# else %>
+        <% else %>
         <li>
           <%= link_to 'Register', [:new, :user] %>
         </li>
         <li>
           <%= link_to 'Login', [:new, :session] %>
         </li>
-        <%# end %>
+        <% end %>
        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
