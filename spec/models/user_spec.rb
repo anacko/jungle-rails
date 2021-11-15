@@ -69,7 +69,7 @@ RSpec.describe User, type: :model do
         password_confirmation: "password"
       )
       @user.save!
-      expect(@user.authenticate_with_credentials("user@email.com", "password")).to eq(@user)
+      expect(User.authenticate_with_credentials("user@email.com", "password")).to eq(@user)
     end
 
     it 'does not retrieve user when provided incorrect email' do
@@ -81,7 +81,7 @@ RSpec.describe User, type: :model do
         password_confirmation: "password"
       )
       @user.save!
-      expect(@user.authenticate_with_credentials("user_not_in_DB@email.com", "password")).to be(false)
+      expect(User.authenticate_with_credentials("user_not_in_DB@email.com", "password")).to be(false)
     end
 
     it 'does not retrieve user when provided incorrect password' do
@@ -93,7 +93,7 @@ RSpec.describe User, type: :model do
         password_confirmation: "password"
       )
       @user.save!
-      expect(@user.authenticate_with_credentials("user@email.com", "wrong_password")).to be(false)
+      expect(User.authenticate_with_credentials("user@email.com", "wrong_password")).to be(false)
     end
 
     it 'retrieve user when provided blank spaces around email' do
@@ -105,7 +105,7 @@ RSpec.describe User, type: :model do
         password_confirmation: "password"
       )
       @user.save!
-      expect(@user.authenticate_with_credentials(" user@email.com", "password")).to eq(@user)
+      expect(User.authenticate_with_credentials(" user@email.com", "password")).to eq(@user)
     end
 
     it 'retrieve user when provided uppercase in email' do
@@ -117,7 +117,7 @@ RSpec.describe User, type: :model do
         password_confirmation: "password"
       )
       @user.save!
-      expect(@user.authenticate_with_credentials("USER@email.com", "password")).to eq(@user)
+      expect(User.authenticate_with_credentials("USER@email.com", "password")).to eq(@user)
     end
 
   end
