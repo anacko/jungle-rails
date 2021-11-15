@@ -108,6 +108,18 @@ RSpec.describe User, type: :model do
       expect(@user.authenticate_with_credentials(" user@email.com", "password")).to eq(@user)
     end
 
+    it 'retrieve user when provided uppercase in email' do
+      @user = User.new(
+        first_name: "First",
+        last_name: "Last",
+        email: "user@email.com",
+        password: "password",
+        password_confirmation: "password"
+      )
+      @user.save!
+      expect(@user.authenticate_with_credentials("USER@email.com", "password")).to eq(@user)
+    end
+
   end
 
 end
