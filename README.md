@@ -7,13 +7,13 @@ Its main features include user registration and login, admin authentication for 
 ## Screenshots
 
 Main Store
-[Main store](https://github.com/anacko/jungle-rails/blob/master/docs/Store.png)
+![Main store](https://github.com/anacko/jungle-rails/blob/master/docs/Store.png)
 
 Admin Access
-[Admin Products](https://github.com/anacko/jungle-rails/blob/master/docs/Admin_all_prods.png)
+![Admin Products](https://github.com/anacko/jungle-rails/blob/master/docs/Admin_all_prods.png)
 
 Order Placement
-[Stripe Ok](https://github.com/anacko/jungle-rails/blob/master/docs/Cart-Pmt.png)
+![Stripe Ok](https://github.com/anacko/jungle-rails/blob/master/docs/Cart-Pmt.png)
 
 ## Setup
 
