@@ -1,6 +1,13 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+Jungle is a mini e-commerce application built with Rails 4.2 for learning Rails by example. 
+
+Its main features include user registration and login, admin authentication for creating new categories and products, and purchases with [Stripe API](https://stripe.com/docs/api).
+
+## Screenshots
+
+
+
 
 ## Setup
 
